@@ -1,7 +1,15 @@
 def testEqual(actual, expected):
-   return actual == expected
+   if actual == expected:
+       print("Pass")
    
 def sort_contacts(con_dict):
+    keylist = con_dict.keys()
+    keylist.sort()
+    Output = []
+    for key in keylist:
+        Output.append(key)
+        Output.append(con_dict[key])
+    return Output
 
 testEqual(sort_contacts({"Horney, Karen": ("1-541-656-3010", "karen@psychoanalysis.com"),
         "Welles, Orson": ("1-312-720-8888", "orson@notlive.com"),
