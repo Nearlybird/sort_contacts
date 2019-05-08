@@ -1,20 +1,26 @@
 def testEqual(actual, expected):
-   if actual == expected:
-       print("Pass")
+    if actual == expected:
+        print("Pass")
+    else:
+        print("Fail. Expected:", expected, "but got:", actual)
    
 def sort_contacts(con_dict):
-    keylist = con_dict.keys()
+    keylist = list(con_dict.keys())
     keylist.sort()
     Output = []
     for key in keylist:
         Output.append(key)
+        #print(key)
         Output.append(con_dict[key])
+        #print(con_dict[key])
     return Output
 
+#sort_contacts({"Horney, Karen": ("1-541-656-3010", "karen@psychoanalysis.com"), "Welles, Orson": ("1-312-720-8888", "orson@notlive.com"), "Freud, Anna": ("1-541-754-3010", "anna@psychoanalysis.com")})
+
 testEqual(sort_contacts({"Horney, Karen": ("1-541-656-3010", "karen@psychoanalysis.com"),
-        "Welles, Orson": ("1-312-720-8888", "orson@notlive.com"),
-        "Freud, Anna": ("1-541-754-3010", "anna@psychoanalysis.com")}), [('Freud, Anna', '1-541-754-3010',
-        'anna@psychoanalysis.com'), ('Horney, Karen', '1-541-656-3010', 'karen@psychoanalysis.com'),
+       "Welles, Orson": ("1-312-720-8888", "orson@notlive.com"),
+       "Freud, Anna": ("1-541-754-3010", "anna@psychoanalysis.com")}), [('Freud, Anna', '1-541-754-3010',
+       'anna@psychoanalysis.com'), ('Horney, Karen', '1-541-656-3010', 'karen@psychoanalysis.com'),
         ('Welles, Orson', '1-312-720-8888', 'orson@notlive.com')])
 testEqual(sort_contacts({"Summitt, Pat": ("1-865-355-4320", "pat@greatcoaches.com"),
     "Rudolph, Wilma": ("1-410-5313-584", "wilma@olympians.com")}),
